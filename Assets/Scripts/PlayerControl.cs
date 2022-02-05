@@ -46,7 +46,7 @@ public class PlayerControl : MonoSingleton<PlayerControl>
 
     void Update()
     {
-        if (hasControl & Input.GetMouseButtonDown(0) && !isClicking)
+        if (hasControl && Input.GetMouseButtonDown(0) && !isClicking)
         { 
             isClicking = true;
         }
@@ -59,7 +59,7 @@ public class PlayerControl : MonoSingleton<PlayerControl>
 
     private void FixedUpdate()
     {
-        if (isClicking)
+        if (isClicking && hasControl)
         {
             isClicking = false;
             rg.AddForce(Vector3.up * force);
