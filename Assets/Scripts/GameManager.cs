@@ -8,7 +8,7 @@ public class GameManager : MonoSingleton<GameManager>
     public Transform obstacleNode;
     [HideInInspector] public int score;
     private float timeForNext;
-    private List<int> scoreTimeReduction = new List<int> { 5, 10, 20, 40, 60, 80 };
+    private readonly List<int> scoreTimeReduction = new List<int> { 5, 10, 20, 40, 60, 80 };
 
 
     private void Start()

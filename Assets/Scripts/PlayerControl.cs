@@ -46,12 +46,9 @@ public class PlayerControl : MonoSingleton<PlayerControl>
 
     void Update()
     {
-        if (hasControl)
-        {
-            if (Input.GetMouseButtonDown(0) && !isClicking)
-            {
-                isClicking = true;
-            }
+        if (hasControl & Input.GetMouseButtonDown(0) && !isClicking)
+        { 
+            isClicking = true;
         }
 
         if(transform.position.y > MAX_HEIGHT)

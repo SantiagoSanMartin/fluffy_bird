@@ -17,7 +17,7 @@ public static class ObstaclePool
 
             obstacleInstance = Object.Instantiate(obstacle, instancePosition, Quaternion.identity).GetComponent<Obstacle>();
             obstacleInstances.Add(obstacleInstance);
-            index++;
+            ++index;
             obstacleInstance.name = obstacleInstance.name + " - " + index;
             obstacleInstance.transform.SetParent(GameManager.Instance.obstacleNode);
         }
@@ -29,6 +29,7 @@ public static class ObstaclePool
 
     public static void ClearPool(Transform obstacleNode)
     {
+        index = 0;
         obstacleInstances.Clear();
         obstacleNode.DestroyChildren();
     }
