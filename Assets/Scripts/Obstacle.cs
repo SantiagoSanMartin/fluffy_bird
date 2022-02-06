@@ -17,7 +17,7 @@ public class Obstacle : MonoBehaviour
         if(Random.value > 0.93f)
         {
             star.SetActive(true);
-            star.transform.localPosition += Vector3.up * Mathf.Sign(Random.Range(-1f, 1f));
+            star.transform.localPosition = Vector3.up * Mathf.Sign(Random.Range(-1f, 1f));
         }
         else
         {
