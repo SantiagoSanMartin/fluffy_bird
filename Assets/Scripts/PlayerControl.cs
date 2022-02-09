@@ -109,6 +109,8 @@ public class PlayerControl : MonoSingleton<PlayerControl>
     {
         yield return null;
 
+        GameManager.Instance.AddPoint();
+
         birdAnimator.SetBool("IsStar", true);
 
         yield return new WaitForSeconds(10f);
@@ -118,7 +120,6 @@ public class PlayerControl : MonoSingleton<PlayerControl>
 
     private IEnumerator Collision()
     {
-        rg.velocity = Vector3.zero;
         rg.bodyType = RigidbodyType2D.Static;
         hasControl = false;
         birdAnimator.SetBool("IsDead", true);
